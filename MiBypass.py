@@ -28,7 +28,10 @@ def dw(s):
 
 def dwt():
     os.system("yes | pkg uninstall termux-adb; curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh | bash; ln -s $PREFIX/bin/termux-fastboot $PREFIX/bin/fastboot; ln -s $PREFIX/bin/termux-adb $PREFIX/bin/adb")
-    print("\nSetup completed successfully!\nTo use tool, run the command: \033[92mmibypass\033[0m\n")
+    up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
+    shutil.copy(__file__, up)
+    os.system(f"chmod +x {up}")
+    print("\nSetup completed successfully!\nTo use MiBypass, run command: \033[92mmibypass\033[0m\n")
     exit()
 
 s = platform.system()
@@ -43,6 +46,8 @@ if s == "Linux" and os.path.exists("/data/data/com.termux"):
     if not os.path.exists(up):
         shutil.copy(__file__, up)
         os.system(f"chmod +x {up}")
+        print("\nto use MiBypass, run command: \033[92mmibypass\033[0m\n")
+        exit()
     cmd = "adb"
 else:
     dir = os.path.dirname(__file__)
