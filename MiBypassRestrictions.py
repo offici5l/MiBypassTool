@@ -27,42 +27,29 @@ def dw(s):
     os.remove(fp)
 
 def dwt():
-    os.system("yes | pkg uninstall termux-adb; curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh | bash; ln -s $PREFIX/bin/termux-fastboot $PREFIX/bin/tfastboot; ln -s $PREFIX/bin/termux-adb $PREFIX/bin/tadb")
-    print(notice)
-    print("\nSetup completed successfully!\nTo use tool, run the command: \033[92mipass\033[0m\n")
+    os.system("yes | pkg uninstall termux-adb; curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh | bash; ln -s $PREFIX/bin/termux-fastboot $PREFIX/bin/fastboot; ln -s $PREFIX/bin/termux-adb $PREFIX/bin/adb")
+    print("\nSetup completed successfully!\nTo use tool, run the command: \033[92mmibypass\033[0m\n")
     exit()
 
 s = platform.system()
 if s == "Linux" and os.path.exists("/data/data/com.termux"):
     try:
-        result_tfastboot = os.popen("tfastboot --version").read()
-        result_tadb = os.popen("tadb --version").read()
-        if "fastboot version" not in result_tfastboot or "Android Debug" not in result_tadb:
+        result_adb = os.popen("adb --version").read()
+        if "Android Debug" not in result_adb:
             dwt()
     except (FileNotFoundError, Exception):
         dwt()
-    up = os.path.join(os.getenv("PREFIX", ""), "bin", "mipass")
+    up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
     if not os.path.exists(up):
         shutil.copy(__file__, up)
         os.system(f"chmod +x {up}")
-    cmd = "tadb"
+    cmd = "adb"
 else:
     dir = os.path.dirname(__file__)
     fp = os.path.join(dir, "platform-tools")
     if not os.path.exists(fp):
         dw(s)
     cmd = os.path.join(fp, "adb")
-
-c1, c2 = "\033[92m", "\033[0m"
-
-while True:
-    user_input = input(f"\nPlease choose region (Account Xiaomi):\n\n{c1}1{c2} India\n{c1}2{c2} Europe\n{c1}3{c2} Russia\n{c1}4{c2} China\n{c1}5{c2} Global\n\nEnter your {c1}choice{c2}: ")
-    if user_input.isdigit() and 1 <= int(user_input) <= 5:
-        g = "unlock.update.intl.miui.com"
-        url = f'https://{ {"1":f"in-{g}", "2":f"eu-{g}", "3":f"ru-{g}", "4":g.replace("intl.", ""), "5":g}.get(str(int(user_input))) }'
-        break
-    else:
-        print("\nPlease enter a valid region (1-5).")
 
 def CheckD(cmd):
     print("\nCheck if the device is connected via OTG in normal mode...\n")
@@ -117,9 +104,16 @@ headers = {"Cookie": re.search(r"Cookie=\[(.*)\]", AES.new(b'20nr1aobv2xi8ax4', 
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
+print("\nversion:",aj["rom_version"])
+
 if aj["rom_version"].startswith("V816"):
     aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
-    print("\nbypass version \033[92mDone\033[0m\n")
+    print("\nchange version to:",aj["rom_version"])
+
+if aj["rom_version"].split(".")[-1][-4:-2] == "CN":
+    rr = ""
+else:
+    rr = "intl."
 
 data = json.dumps(aj)
 
@@ -131,7 +125,7 @@ payload = {
     "sign": signature
 }
 
-response = requests.post(f"{url}/v1/unlock/applyBind", data=payload, headers=headers)
+response = requests.post(f"https://unlock.update.{rr}miui.com/v1/unlock/applyBind", data=payload, headers=headers)
 
 data = json.loads(response.text)
 
