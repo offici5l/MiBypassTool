@@ -29,7 +29,6 @@ def dw(s):
 def dwt():
     os.system("yes | pkg uninstall termux-adb; curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh | bash; ln -s $PREFIX/bin/termux-fastboot $PREFIX/bin/fastboot; ln -s $PREFIX/bin/termux-adb $PREFIX/bin/adb")
     print("\nSetup completed successfully!\nTo use tool, run the command: \033[92mmibypass\033[0m\n")
-    os.remove(__file__)
     exit()
 
 s = platform.system()
