@@ -1,14 +1,16 @@
 <div align="center">
 
-# Mi-Bypass:
-
-- Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
+# MiBypass
 
 It is compatible with all platforms.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
 </div>
+
+MiBypass:
+
+- Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
 
 [![Telegram Channel](https://img.shields.io/badge/-telegram-red?color=white&logo=telegram&logoColor=blue)](https://t.me/Offici5l_Channel)
 
