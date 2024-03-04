@@ -1,6 +1,8 @@
 <div align="center">
 
-# Bypass HyperOS Restrictions
+# Mi-Bypass:
+
+- Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
 
 It is compatible with all platforms.
 
