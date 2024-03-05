@@ -1,6 +1,6 @@
 <div align="center">
 
-# MiBypass
+# MiBypassTool
 
 It is compatible with all platforms.
 
@@ -10,7 +10,7 @@ It is compatible with all platforms.
 
 </div>
 
-MiBypass:
+MiBypassTool:
 
 - Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
 
@@ -19,7 +19,7 @@ MiBypass:
 ### For Mac, Windows, Linux:
 
 1. Install Python3.
-2. Download [MiBypass](https://codeload.github.com/offici5l/MiBypass/zip/refs/heads/main) and run it.
+2. Download [MiBypassTool](https://codeload.github.com/offici5l/MiBypassTool/zip/refs/heads/main) and run it.
 
 ### For Android:
 
@@ -33,5 +33,5 @@ termux-setup-storage
 yes | pkg install python3
 ```
 ```bash
-curl -O https://raw.githubusercontent.com/offici5l/MiBypass/master/MiBypass.py && python MiBypass.py
+curl -O https://raw.githubusercontent.com/offici5l/MiBypassTool/master/MiBypassTool && python MiBypassTool
 ```
