@@ -43,12 +43,14 @@ if s == "Linux" and os.path.exists("/data/data/com.termux"):
         os.system(f"chmod +x {up}")
         print("\n(For future usage, just run command: \033[92mmibypass\033[0m)\n")
     cmd = "adb"
+    systemp = "t"
 else:
     dir = os.path.dirname(__file__)
     fp = os.path.join(dir, "platform-tools")
     if not os.path.exists(fp):
         dw(s)
     cmd = os.path.join(fp, "adb")
+    systemp = "o"
 
 def CheckD(cmd):
     print("\nCheck if the device is connected via OTG in normal mode...\n")
@@ -130,3 +132,5 @@ data = json.loads(response.text)
 
 for key, value in data.items():
     print(f"\n{key}: {value}")
+
+systemp == "o" and input("\nPress Enter to exit ...")
