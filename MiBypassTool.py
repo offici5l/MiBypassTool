@@ -41,7 +41,8 @@ if s == "Linux" and os.path.exists("/data/data/com.termux"):
     if not os.path.exists(up):
         shutil.copy(__file__, up)
         os.system(f"chmod +x {up}")
-        print("\n(For future usage, just run command: \033[92mmibypass\033[0m)\n")
+        print("\n(Now use command: \033[92mmibypass\033[0m)\n")
+        exit()
     cmd = "adb"
     systemp = "t"
 else:
