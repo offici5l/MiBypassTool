@@ -23,7 +23,7 @@ MiBypassTool:
 
 ### For Android:
 
-1. [Termux](https://github.com/termux/termux-app/releases/tag/v0.118.0)
+1. Install [Termux](https://github.com/termux/termux-app/releases/tag/v0.118.0)
 
 2. Install [Termux API](https://github.com/termux/termux-api/releases/download/v0.50.1/termux-api_v0.50.1+github-debug.apk)
 
