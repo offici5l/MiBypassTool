@@ -10,7 +10,7 @@ for lib in ['Cryptodome', 'requests']:
         os.system('yes | pkg update' if "com.termux" in os.getenv("PREFIX", "") else '')
         os.system(f'pip install pycryptodomex' if lib == 'Cryptodome' else f'pip install {lib}')
 
-import re, base64, requests, time, json, hmac, hashlib, random, urllib, urllib.parse, platform, shutil, subprocess
+import re, base64, requests, time, json, hmac, hashlib, random, urllib, urllib.parse, platform, shutil, subprocess, zipfile
 from Cryptodome.Util.Padding import unpad
 from base64 import b64encode, b64decode
 from Cryptodome.Cipher import AES
