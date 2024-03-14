@@ -35,5 +35,5 @@ termux-setup-storage
 yes | pkg install python3
 ```
 ```bash
-curl -O https://raw.githubusercontent.com/offici5l/MiBypassTool/master/MiBypassTool.py && python MiBypassTool
+curl -O https://raw.githubusercontent.com/offici5l/MiBypassTool/master/MiBypassTool.py && python MiBypassTool.py
 ```
