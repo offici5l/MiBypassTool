@@ -26,8 +26,14 @@ def dw(s):
         zip_ref.extractall(cd)   
     os.remove(fp)
 
+up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
+ttp = "\nuse command: \033[92mmibypass\033[0m\n"
+
 def dwt():
     os.system("yes | pkg uninstall termux-adb; curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh | bash; ln -s $PREFIX/bin/termux-fastboot $PREFIX/bin/fastboot; ln -s $PREFIX/bin/termux-adb $PREFIX/bin/adb")
+    if os.path.exists(up):
+        print(ttp)
+        exit()
 
 s = platform.system()
 if s == "Linux" and os.path.exists("/data/data/com.termux"):
@@ -37,11 +43,10 @@ if s == "Linux" and os.path.exists("/data/data/com.termux"):
             dwt()
     except (FileNotFoundError, Exception):
         dwt()
-    up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
     if not os.path.exists(up):
         shutil.copy(__file__, up)
         os.system(f"chmod +x {up}")
-        print("\n(Now use command: \033[92mmibypass\033[0m)\n")
+        print(ttp)
         exit()
     cmd = "adb"
     systemp = "t"
