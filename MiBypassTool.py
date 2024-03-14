@@ -54,7 +54,7 @@ else:
     systemp = "o"
 
 def CheckD(cmd):
-    print("\nCheck if the device is connected via OTG in normal mode...\n")
+    print("\nCheck if device is connected in normal mode...\n")
     while True:
         try:
             result = subprocess.run([cmd, "get-state"], capture_output=True, text=True, timeout=1)
