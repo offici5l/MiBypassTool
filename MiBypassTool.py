@@ -109,7 +109,12 @@ while True:
     if account_bind_found:
         break
 
-headers = {"Cookie": re.search(r"Cookie=\[(.*)\]", AES.new(b'20nr1aobv2xi8ax4', AES.MODE_CBC, b'0102030405060708').decrypt(base64.b64decode(headers)).rstrip(b'\0').decode('utf-8')).group(1).strip(), "Content-Type": "application/x-www-form-urlencoded"}
+try:
+    headers = {"Cookie": re.search(r"Cookie=\[(.*)\]", AES.new(b'20nr1aobv2xi8ax4', AES.MODE_CBC, b'0102030405060708').decrypt(base64.b64decode(headers)).rstrip(b'\0').decode('utf-8')).group(1).strip(), "Content-Type": "application/x-www-form-urlencoded"}
+    
+except ValueError as e:
+    print("\n\033[91mError: Please downgrade system app.\033[0m\nhttps://github.com/offici5l/MiBypassTool/releases/download/1/Settings.apk.zip")
+    exit()
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
