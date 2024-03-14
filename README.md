@@ -34,8 +34,5 @@ for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 termux-setup-storage
 ```
 ```bash
-yes | pkg install python3
-```
-```bash
-curl -O https://raw.githubusercontent.com/offici5l/MiBypassTool/master/MiBypassTool.py && python MiBypassTool.py
+curl https://raw.githubusercontent.com/offici5l/MiTool/master/install.sh | sed -n '12,15p;45p' | bash; mibypass
 ```
