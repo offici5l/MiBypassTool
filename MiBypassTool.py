@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
+
 import os
 
 for lib in ['Cryptodome', 'requests']:
