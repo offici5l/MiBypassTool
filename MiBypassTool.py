@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
-
 import os
 
 for lib in ['Cryptodome', 'requests']:
@@ -65,6 +63,8 @@ def CheckD(cmd):
         if "device" in result.stdout:
             return True
     return False
+
+print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
 
 checkd = CheckD(cmd)
 
