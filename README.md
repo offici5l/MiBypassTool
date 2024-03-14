@@ -14,6 +14,8 @@ MiBypassTool:
 
 - Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
 
+for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
+
 # Installation:
 
 ### For Mac, Windows, Linux:
