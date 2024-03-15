@@ -143,7 +143,15 @@ response = requests.post(f"https://unlock.update.{rr}miui.com/v1/unlock/applyBin
 
 data = json.loads(response.text)
 
-for key, value in data.items():
-    print(f"\n{key}: {value}")
+if "code" in data:
+    if data["code"] == 0:
+        print("\n\033[92mLinked successfully\033[0m\n")
+    elif data["code"] == 401:
+        print("\nCode 401 Param expired!\nPlease log out of your account on the device and then log in again. After that, try again.\n")
+    else:
+        for key, value in data.items():
+            print(f"\n{key}: {value}")
+else:
+    print(data)
 
 systemp == "o" and input("\nPress Enter to exit ...")
