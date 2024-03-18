@@ -92,19 +92,20 @@ print("\n\033[92mNow bind your account in Mi Unlock status ...\033[0m\n")
 account_bind_found = False
 
 while True:
-    process = subprocess.run([cmd, "logcat", "*:S", "CloudDeviceStatus:V", "-d"], capture_output=True, text=True).stdout
+    process = subprocess.Popen(f"{cmd} logcat *:S CloudDeviceStatus:V -d", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, error = process.communicate()
     args_found = False
     headers_found = False
-    for output in process.split('\n'):
-        if "CloudDeviceStatus: args:" in output:
-            args = output.split('args:')[1].strip()
+    for line in output.decode("utf-8").split('\n'):
+        if "CloudDeviceStatus: args:" in line:
+            args = line.split('args:')[1].strip()
             args_found = True
-        if "CloudDeviceStatus: headers:" in output:
-            headers = output.split('headers:')[1].strip()
+        if "CloudDeviceStatus: headers:" in line:
+            headers = line.split('headers:')[1].strip()
             headers_found = True
         if args_found and headers_found:
             account_bind_found = True
-            os.system(f"{cmd} shell svc data disable")
+            subprocess.run(f"{cmd} shell svc data disable", shell=True)
             break
     if account_bind_found:
         break
