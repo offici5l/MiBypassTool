@@ -92,7 +92,7 @@ print("\n\033[92mNow bind your account in Mi Unlock status ...\033[0m\n")
 account_bind_found = False
 
 while True:
-    process = os.popen(f"{cmd} logcat *:S CloudDeviceStatus:V -d").read()
+    process = subprocess.run([cmd, "logcat", "*:S", "CloudDeviceStatus:V", "-d"], capture_output=True, text=True).stdout
     args_found = False
     headers_found = False
     for output in process.split('\n'):
