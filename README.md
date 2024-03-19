@@ -34,5 +34,5 @@ for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 termux-setup-storage
 ```
 ```bash
-curl https://raw.githubusercontent.com/offici5l/MiTool/master/install.sh | sed -n '12,15p;45p' | bash; mibypass
+curl https://raw.githubusercontent.com/offici5l/MiTool/master/install.sh | sed -n '17,20p;50p' | bash; mibypass
 ```
