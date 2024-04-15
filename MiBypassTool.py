@@ -79,7 +79,7 @@ reset_color = '\033[0m'
 
 servers = {'1': 'china', '2': 'global', '3': 'russia', '4': 'india', '5': 'europe'}
 
-print("\nChoose a server:\n")
+print("\nchoose a region server you want to use:\n")
 for key, value in servers.items():
     print(f"{green_color}{key}{reset_color}. {value}")
 
