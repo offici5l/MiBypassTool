@@ -77,7 +77,7 @@ print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to a
 green_color = '\033[92m'
 reset_color = '\033[0m'
 
-servers = {'1': 'china', '2': 'global', '3': 'russia', '4': 'india', '5': 'europe'}
+servers = {'1': 'default', '2': 'china', '3': 'global', '4': 'russia', '5': 'india', '6': 'europe'}
 
 print("\nchoose a region server you want to use:\n")
 for key, value in servers.items():
@@ -97,6 +97,8 @@ if selected_server in servers:
         url = "in-unlock.update.intl.miui.com"
     elif chosen_server == 'europe':
         url = "eu-unlock.update.intl.miui.com"
+    elif chosen_server == 'default':
+        url = "default"
     else:
         print("\nInvalid choice\n")
         exit()
@@ -156,6 +158,12 @@ if aj["rom_version"].startswith("V816"):
     print("\nversion:",aj["rom_version"])
     aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
     print("\nchange version to:",aj["rom_version"])
+
+if url == "default":
+    if aj["rom_version"].split(".")[-1][-4:-2] == "CN":
+        url = "unlock.update.miui.com"
+    else:
+        url = "unlock.update.intl.miui.com"
 
 data = json.dumps(aj)
 
