@@ -74,6 +74,36 @@ def CheckD(cmd):
 
 print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
 
+green_color = '\033[92m'
+reset_color = '\033[0m'
+
+servers = {'1': 'china', '2': 'global', '3': 'russia', '4': 'india', '5': 'europe'}
+
+print("\nChoose a server:\n")
+for key, value in servers.items():
+    print(f"{green_color}{key}{reset_color}. {value}")
+
+selected_server = input(f"\nEnter your {green_color}choice{reset_color}: ")
+
+if selected_server in servers:
+    chosen_server = servers[selected_server]
+    if chosen_server == 'china':
+        url = "unlock.update.miui.com"
+    elif chosen_server == 'global':
+        url = "unlock.update.intl.miui.com"
+    elif chosen_server == 'russia':
+        url = "ru-unlock.update.intl.miui.com"
+    elif chosen_server == 'india':
+        url = "in-unlock.update.intl.miui.com"
+    elif chosen_server == 'europe':
+        url = "eu-unlock.update.intl.miui.com"
+    else:
+        print("\nInvalid choice\n")
+        exit()
+else:
+    print("\nInvalid choice\n")
+    exit()
+
 checkd = CheckD(cmd)
 
 if checkd:
@@ -122,16 +152,10 @@ except ValueError as e:
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
-print("\nversion:",aj["rom_version"])
-
 if aj["rom_version"].startswith("V816"):
+    print("\nversion:",aj["rom_version"])
     aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
     print("\nchange version to:",aj["rom_version"])
-
-if aj["rom_version"].split(".")[-1][-4:-2] == "CN":
-    rr = ""
-else:
-    rr = "intl."
 
 data = json.dumps(aj)
 
@@ -143,7 +167,7 @@ payload = {
     "sign": signature
 }
 
-response = requests.post(f"https://unlock.update.{rr}miui.com/v1/unlock/applyBind", data=payload, headers=headers)
+response = requests.post(f"https://{url}/v1/unlock/applyBind", data=payload, headers=headers)
 
 data = json.loads(response.text)
 
