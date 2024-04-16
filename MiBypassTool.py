@@ -74,6 +74,14 @@ def CheckD(cmd):
 
 print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
 
+checkd = CheckD(cmd)
+
+if checkd:
+    print("Device is connected \033[92mDone\033[0m\n")
+else:
+    print("Device is not connected exit...")
+    exit()
+
 green_color = '\033[92m'
 reset_color = '\033[0m'
 
@@ -98,20 +106,12 @@ if selected_server in servers:
     elif chosen_server == 'europe':
         url = "eu-unlock.update.intl.miui.com"
     elif chosen_server == 'default':
-        url = "default"
+        url = "unlock.update.intl.miui.com" if "_global" in subprocess.check_output([f'{cmd}', 'shell', 'getprop', 'ro.product.mod_device']).decode('utf-8').strip() else "unlock.update.miui.com"
     else:
         print("\nInvalid choice\n")
         exit()
 else:
     print("\nInvalid choice\n")
-    exit()
-
-checkd = CheckD(cmd)
-
-if checkd:
-    print("Device is connected \033[92mDone\033[0m\n")
-else:
-    print("Device is not connected exit...")
     exit()
 
 os.popen(f"{cmd} logcat -c")
