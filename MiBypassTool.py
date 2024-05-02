@@ -85,7 +85,7 @@ else:
 green_color = '\033[92m'
 reset_color = '\033[0m'
 
-servers = {'1': 'default', '2': 'china', '3': 'global', '4': 'russia', '5': 'india', '6': 'europe'}
+servers = {'1': '\033[92mdefault\033[0m', '2': 'china', '3': 'global', '4': 'russia', '5': 'india', '6': 'europe'}
 
 print("\nchoose a region server you want to use:\n")
 for key, value in servers.items():
