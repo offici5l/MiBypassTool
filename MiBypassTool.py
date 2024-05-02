@@ -184,6 +184,8 @@ if "code" in data:
         print("\n\033[92mLinked successfully\033[0m\n")
     elif data["code"] == 401:
         print("\nCode 401 Param expired!\nPlease log out of your account on the device and then log in again. After that, try again.\n")
+    elif data["code"] == 30001:
+        print("\ncode 30001 Device forced to verify, you're out of luck\n")
     else:
         for key, value in data.items():
             print(f"\n{key}: {value}")
