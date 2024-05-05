@@ -2,6 +2,7 @@
 
 # MiBypassTool
 
+( Xiaomi 14 ... and Redmi K70 ... cannot be bypassed )
 It is compatible with all platforms.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
