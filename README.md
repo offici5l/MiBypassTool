@@ -2,8 +2,6 @@
 
 # MiBypassTool
 
-( Xiaomi 14 ... and Redmi K70 ... Redmi Note 13 series, cannot be bypassed )
-
 It is compatible with all platforms.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
@@ -15,6 +13,7 @@ It is compatible with all platforms.
 MiBypassTool:
 
 - Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
+( note: cannot be bypass restriction for Xiaomi 14, Xiaomi 14pro, Redmi K70, Redmi K70pro, Redmi Note 13 series )
 
 for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
