@@ -2,7 +2,7 @@
 
 # MiBypassTool
 
-( Xiaomi 14 ... and Redmi K70 ... cannot be bypassed )
+( Xiaomi 14 ... and Redmi K70 ... Redmi Note 13 series, cannot be bypassed )
 
 It is compatible with all platforms.
 
