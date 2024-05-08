@@ -6,9 +6,18 @@ for lib in ['Cryptodome', 'requests']:
     try:
         __import__(lib)
     except ImportError:
-        print(f"\nInstalling {lib}...\n")
-        os.system('yes | pkg update' if "com.termux" in os.getenv("PREFIX", "") else '')
-        os.system(f'pip install pycryptodomex' if lib == 'Cryptodome' else f'pip install {lib}')
+        prefix = os.getenv("PREFIX", "")
+        if "com.termux" in prefix:
+            os.system('yes | pkg update')
+        
+        if lib == 'Cryptodome':
+            if "com.termux" in prefix:
+                cmd = 'pip install pycryptodomex --extra-index-url https://termux-user-repository.github.io/pypi/'
+            else:
+                cmd = 'pip install pycryptodomex'
+        else:
+            cmd = f'pip install {lib}'
+        os.system(cmd)
 
 import re, base64, requests, time, json, hmac, hashlib, random, urllib, urllib.parse, platform, shutil, subprocess, zipfile, stat
 from Cryptodome.Util.Padding import unpad
