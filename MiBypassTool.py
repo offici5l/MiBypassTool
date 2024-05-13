@@ -74,7 +74,7 @@ def CheckD(cmd):
     print("\nCheck if device is connected in normal mode...\n")
     while True:
         try:
-            result = subprocess.run([cmd, "get-state"], capture_output=True, text=True, timeout=1)
+            result = subprocess.run([cmd, "get-state"], capture_output=True, text=True, timeout=6)
         except subprocess.TimeoutExpired:
             continue
         if "device" in result.stdout:
