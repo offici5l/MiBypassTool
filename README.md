@@ -32,5 +32,5 @@ for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
 3. From Termux command line:
 ```bash
-curl https://raw.githubusercontent.com/offici5l/MyBypassTool/main/.install | bash
+curl https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash
 ```
