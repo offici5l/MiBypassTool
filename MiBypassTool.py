@@ -91,37 +91,7 @@ else:
     print("Device is not connected exit...")
     exit()
 
-green_color = '\033[92m'
-reset_color = '\033[0m'
-
-servers = {'1': '\033[92mdefault\033[0m', '2': 'china', '3': 'global', '4': 'russia', '5': 'india', '6': 'europe'}
-
-print("\nchoose a region server you want to use:\n")
-for key, value in servers.items():
-    print(f"{green_color}{key}{reset_color}. {value}")
-
-selected_server = input(f"\nEnter your {green_color}choice{reset_color}: ")
-
-if selected_server in servers:
-    chosen_server = servers[selected_server]
-    if chosen_server == 'china':
-        url = "unlock.update.miui.com"
-    elif chosen_server == 'global':
-        url = "unlock.update.intl.miui.com"
-    elif chosen_server == 'russia':
-        url = "ru-unlock.update.intl.miui.com"
-    elif chosen_server == 'india':
-        url = "in-unlock.update.intl.miui.com"
-    elif chosen_server == 'europe':
-        url = "eu-unlock.update.intl.miui.com"
-    elif chosen_server == 'default':
-        url = "unlock.update.intl.miui.com" if "_global" in subprocess.check_output([f'{cmd}', 'shell', 'getprop', 'ro.product.mod_device']).decode('utf-8').strip() else "unlock.update.miui.com"
-    else:
-        print("\nInvalid choice\n")
-        exit()
-else:
-    print("\nInvalid choice\n")
-    exit()
+url = "unlock.update.intl.miui.com" if "_global" in subprocess.check_output([f'{cmd}', 'shell', 'getprop', 'ro.product.mod_device']).decode('utf-8').strip() else "unlock.update.miui.com"
 
 os.popen(f"{cmd} logcat -c")
 
