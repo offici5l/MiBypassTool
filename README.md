@@ -19,7 +19,7 @@ for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
 # Installation:
 
-### For Mac, Windows, Linux:
+### For MacOS, Windows, Linux:
 
 1. Install Python3.
 2. Download [MiBypassTool](https://codeload.github.com/offici5l/MiBypassTool/zip/refs/heads/main) and run it.
