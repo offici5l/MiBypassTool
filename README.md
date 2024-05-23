@@ -14,8 +14,8 @@ MiBypassTool:
 
 (Branch a test)
 
-[✓] bypass Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
-[✓] bypass Restriction(Cant add more accounts to this SIM Card)
+- [✓] bypass Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
+- [✓] bypass Restriction(Cant add more accounts to this SIM Card)
 
 for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
