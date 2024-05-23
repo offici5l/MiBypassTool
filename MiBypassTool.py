@@ -138,12 +138,6 @@ if aj["rom_version"].startswith("V816"):
     aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
     print("\nchange version to:",aj["rom_version"])
 
-if url == "default":
-    if aj["rom_version"].split(".")[-1][-4:-2] == "CN":
-        url = "unlock.update.miui.com"
-    else:
-        url = "unlock.update.intl.miui.com"
-
 data = json.dumps(aj)
 
 signature = hmac.new("10f29ff413c89c8de02349cb3eb9a5f510f29ff413c89c8de02349cb3eb9a5f5".encode("utf-8"), f"POST\n/v1/unlock/applyBind\ndata={data}&sid=miui_sec_android".encode("utf-8"), hashlib.sha1).hexdigest()
