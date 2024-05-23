@@ -26,6 +26,6 @@ if ! python3 -c "import requests" &>/dev/null; then
 fi
 
 printf "\n\n\n\033[32mupdate MiBypassTool...\033[0m\n\n\n"
-curl "https://raw.githubusercontent.com/offici5l/MiBypassTool/main/MiBypassTool.py" -o "$PREFIX/bin/mibypass" && chmod +x "$PREFIX/bin/mibypass"
+curl "https://raw.githubusercontent.com/offici5l/MiBypassTool/atest/MiBypassTool.py" -o "$PREFIX/bin/mibypass" && chmod +x "$PREFIX/bin/mibypass"
 
 printf "\n\n\nuse command: \e[1;32mmibypass\e[0m\n"
