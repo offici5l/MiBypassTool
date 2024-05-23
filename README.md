@@ -12,8 +12,7 @@ It is compatible with all platforms.
 
 MiBypassTool:
 
-- Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
-- cannot bypass restriction for Xiaomi 14, Xiaomi 14pro, Redmi K70, Redmi K70pro, Redmi Note 13 series
+(Branch a test)
 
 for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
@@ -22,7 +21,7 @@ for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 ### For MacOS, Windows, Linux:
 
 1. Install Python3.
-2. Download [MiBypassTool](https://codeload.github.com/offici5l/MiBypassTool/zip/refs/heads/main) and run it.
+2. Download [MiBypassTool](https://codeload.github.com/offici5l/MiBypassTool/zip/refs/heads/atest) and run it.
 
 ### For Android:
 
@@ -32,5 +31,5 @@ for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
 3. From Termux command line:
 ```bash
-curl https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash
+curl https://raw.githubusercontent.com/offici5l/MiBypassTool/atest/.install | bash
 ```
