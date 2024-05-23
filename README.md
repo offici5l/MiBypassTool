@@ -10,8 +10,6 @@ It is compatible with all platforms.
 
 </div>
 
-MiBypassTool:
-
 (Branch a test)
 
 - bypass Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
