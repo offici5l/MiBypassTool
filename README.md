@@ -14,6 +14,8 @@ MiBypassTool:
 
 (Branch a test)
 
+[✓] bypass "Cant add more accounts to this SIM Card"
+
 for unlock use: [MiUnlockTool](https://github.com/offici5l/MiUnlockTool)
 
 # Installation:
