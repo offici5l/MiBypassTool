@@ -81,8 +81,6 @@ def CheckD(cmd):
             return True
     return False
 
-print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
-
 checkd = CheckD(cmd)
 
 if checkd:
@@ -133,10 +131,12 @@ except ValueError as e:
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
-if aj["rom_version"].startswith("V816"):
-    print("\nversion:",aj["rom_version"])
-    aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
-    print("\nchange version to:",aj["rom_version"])
+aj["rom_version"] = "1"
+del aj["heartbeat_mode"]
+del aj["error_code"]
+del aj["userId"]
+aj["imsi1"] = "1"
+aj["device"] = "global"
 
 data = json.dumps(aj)
 
