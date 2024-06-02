@@ -131,12 +131,16 @@ except ValueError as e:
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
-aj["rom_version"] = "1"
+# print(aj)
+
+# can deleted: heartbeat_mode,error_code, userId
+# can modified , imsi1, device, rom_version to any value you want
 del aj["heartbeat_mode"]
 del aj["error_code"]
 del aj["userId"]
 aj["imsi1"] = "1"
 aj["device"] = "global"
+aj["rom_version"] = "1"
 
 data = json.dumps(aj)
 
