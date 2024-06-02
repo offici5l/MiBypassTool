@@ -133,8 +133,9 @@ aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, 
 
 # print(aj)
 
-# can deleted: heartbeat_mode,error_code, userId
-# can modified , imsi1, device, rom_version to any value you want
+# can deleted: heartbeat_mode, error_code, userId
+# can modified: imsi1, device, rom_version . to any value you want
+
 del aj["heartbeat_mode"]
 del aj["error_code"]
 del aj["userId"]
