@@ -139,7 +139,7 @@ aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, 
 del aj["heartbeat_mode"]
 del aj["error_code"]
 del aj["userId"]
-aj["imsi1"] = "1"
+aj["imsi1"] = "3"
 aj["device"] = "global"
 aj["rom_version"] = "1"
 
