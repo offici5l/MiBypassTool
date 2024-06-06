@@ -136,10 +136,13 @@ aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, 
 # can deleted: heartbeat_mode, error_code, userId
 # can modified: imsi1, device, rom_version . to any value you want
 
+imsi_value = input("\nPlease enter a random number for imsi1: ")
+
+aj["imsi1"] = imsi_value
+
 del aj["heartbeat_mode"]
 del aj["error_code"]
 del aj["userId"]
-aj["imsi1"] = "3"
 aj["device"] = "global"
 aj["rom_version"] = "1"
 
