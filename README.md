@@ -13,9 +13,8 @@ It is compatible with all platforms.
 MiBypassTool:
 
 - Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
-- cannot bypass restriction for Xiaomi 14, Xiaomi 14pro, Redmi K70, Redmi K70pro, Redmi Note 13 series
 
-- bypass Restriction(Cant add more accounts to this SIM Card)
+- Bypass Restriction(Cant add more accounts to this SIM Card)
 
 # Installation:
 
