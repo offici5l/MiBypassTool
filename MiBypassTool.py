@@ -70,6 +70,20 @@ else:
         os.chmod(cmd, st.st_mode | stat.S_IEXEC)
     systemp = "o"
 
+print("\n━ \033[92m1\033[0m Bypass Restriction\n  (Can't add more accounts to this SIM Card)\n\n━ \033[92m2\033[0m Bypass HyperOS Restriction\n  (Couldn't add. Please go to Mi Community to apply for authorization and try again.)")
+
+choice = input("\nEnter your \033[92mchoice\033[0m (1 or 2): ")
+
+bypass_restriction = False
+bypass_hyperos_restriction = False
+
+if choice == '1':
+    bypass_restriction = True
+elif choice == '2':
+    bypass_hyperos_restriction = True
+else:
+    print("Invalid option. Please try again.")
+
 def CheckD(cmd):
     print("\nCheck if device is connected in normal mode...\n")
     while True:
@@ -80,8 +94,6 @@ def CheckD(cmd):
         if "device" in result.stdout:
             return True
     return False
-
-print("\nBypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n")
 
 checkd = CheckD(cmd)
 
@@ -133,10 +145,14 @@ except ValueError as e:
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
-if aj["rom_version"].startswith("V816"):
-    print("\nversion:",aj["rom_version"])
-    aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
-    print("\nchange version to:",aj["rom_version"])
+if bypass_restriction:
+    imsi_value = input("\nPlease enter a random number for imsi1: ")
+    aj["imsi1"] = imsi_value
+elif bypass_hyperos_restriction:
+    if aj["rom_version"].startswith("V816"):
+        print("\nversion:",aj["rom_version"])
+        aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
+        print("\nchange version to:",aj["rom_version"])
 
 data = json.dumps(aj)
 
@@ -159,6 +175,8 @@ if "code" in data:
         print("\nCode 401 Param expired!\nPlease log out of your account on the device and then log in again. After that, try again.\n")
     elif data["code"] == 30001:
         print("\ncode 30001 Device forced to verify, you're out of luck\n")
+    elif data["code"] == 20052:
+        print("\ncode 20052 imsi1 is not available, Please try again and enter another imsi1\n")
     else:
         for key, value in data.items():
             print(f"\n{key}: {value}")
