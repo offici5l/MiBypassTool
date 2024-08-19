@@ -14,11 +14,11 @@ It is compatible with all platforms.
 
 MiBypassTool:
 
-- Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
+- [1] Bypass HyperOS Restriction(Couldn't add. Please go to Mi Community to apply for authorization and try again.)
 
-note: that if your device was made directly with HyperOS from the factory, currently bypassing the restrictions is currently not possible.
+note: that if your device was made directly with HyperOS from the factory, currently bypassing the restriction [1] is currently not possible.
 
-- Bypass Restriction(Cant add more accounts to this SIM Card)
+- [2] Bypass Restriction(Cant add more accounts to this SIM Card)
 
 # Installation:
 
