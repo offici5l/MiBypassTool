@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# version 1.2
+
 import os
 
 for lib in ['Cryptodome', 'requests']:
