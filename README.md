@@ -2,6 +2,8 @@
 
 # MiBypassTool
 
+[![Version 1.2](https://img.shields.io/badge/Version-1.2-brightgreen)](#)
+
 It is compatible with all platforms.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
