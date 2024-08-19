@@ -35,3 +35,12 @@ MiBypassTool:
 ```bash
 curl https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash
 ```
+
+## Changelog :
+
+version 1.1
+- add Bypass Restriction(Cant add more accounts to this SIM Card)
+
+version 1.2
+- add Bypass Both Restrictions
+  (Apply both bypasses)
