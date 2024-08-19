@@ -70,9 +70,9 @@ else:
         os.chmod(cmd, st.st_mode | stat.S_IEXEC)
     systemp = "o"
 
-print("\n━ \033[92m1\033[0m Bypass Restriction\n  (Can't add more accounts to this SIM Card)\n\n━ \033[92m2\033[0m Bypass HyperOS Restriction\n  (Couldn't add. Please go to Mi Community to apply for authorization and try again.)")
+print("\n━ \033[92m1\033[0m Bypass Restriction\n  (Can't add more accounts to this SIM Card)\n\n━ \033[92m2\033[0m Bypass HyperOS Restriction\n  (Couldn't add. Please go to Mi Community to apply for authorization and try again.)\n\n━ \033[92m3\033[0m Bypass Both Restrictions\n  (Apply both bypasses)")
 
-choice = input("\nEnter your \033[92mchoice\033[0m (1 or 2): ")
+choice = input("\nEnter your \033[92mchoice\033[0m (1, 2, or 3): ")
 
 bypass_restriction = False
 bypass_hyperos_restriction = False
@@ -80,6 +80,9 @@ bypass_hyperos_restriction = False
 if choice == '1':
     bypass_restriction = True
 elif choice == '2':
+    bypass_hyperos_restriction = True
+elif choice == '3':
+    bypass_restriction = True
     bypass_hyperos_restriction = True
 else:
     print("Invalid option. Please try again.")
@@ -148,11 +151,12 @@ aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, 
 if bypass_restriction:
     imsi_value = input("\nPlease enter a random number for imsi1: ")
     aj["imsi1"] = imsi_value
-elif bypass_hyperos_restriction:
+
+if bypass_hyperos_restriction:
     if aj["rom_version"].startswith("V816"):
-        print("\nversion:",aj["rom_version"])
+        print("\nCurrent version:", aj["rom_version"])
         aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
-        print("\nchange version to:",aj["rom_version"])
+        print("\nVersion updated to:", aj["rom_version"])
 
 data = json.dumps(aj)
 
