@@ -87,7 +87,8 @@ elif choice == '3':
     bypass_restriction = True
     bypass_hyperos_restriction = True
 else:
-    print("Invalid option. Please try again.")
+    print("Invalid choice. Please try again.")
+    exit()
 
 def CheckD(cmd):
     print("\nCheck if device is connected in normal mode...\n")
