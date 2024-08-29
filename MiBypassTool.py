@@ -41,7 +41,7 @@ up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
 ttp = "\nuse command: \033[92mmibypass\033[0m\n"
 
 def dwt():
-    os.system("yes | pkg uninstall termux-adb; curl -s https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh | bash; ln -s $PREFIX/bin/termux-fastboot $PREFIX/bin/fastboot; ln -s $PREFIX/bin/termux-adb $PREFIX/bin/adb")
+    os.system("curl https://raw.githubusercontent.com/offici5l/termux-adb-fastboot/main/install | bash")
     if os.path.exists(up):
         print(ttp)
         exit()
