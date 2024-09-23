@@ -38,12 +38,14 @@ def dw(s):
     os.remove(fp)
 
 up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
-ttp = "\nuse command: \033[92mmibypass\033[0m\n"
 
 def dwt():
     os.system("curl https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash")
-    if os.path.exists(up):
-        print(ttp)
+    if not os.path.exists(up):
+        shutil.copy(__file__, up)
+        os.system(f"chmod +x {up}")
+        exit()
+    else:
         exit()
 
 s = platform.system()
