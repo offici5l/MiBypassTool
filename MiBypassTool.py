@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# version 1.2
+version = "1.2"
 
 import os
 
