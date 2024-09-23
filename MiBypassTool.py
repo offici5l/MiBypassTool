@@ -41,7 +41,7 @@ up = os.path.join(os.getenv("PREFIX", ""), "bin", "mibypass")
 ttp = "\nuse command: \033[92mmibypass\033[0m\n"
 
 def dwt():
-    os.system("curl https://raw.githubusercontent.com/offici5l/termux-adb-fastboot/main/install | bash")
+    os.system("curl https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash")
     if os.path.exists(up):
         print(ttp)
         exit()
