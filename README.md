@@ -35,7 +35,7 @@ note: that if your device was made directly with HyperOS from the factory, curre
 
 3. From Termux command line:
 ```bash
-curl https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash
+curl -s https://raw.githubusercontent.com/offici5l/MiBypassTool/main/.install | bash
 ```
 
 ## Changelog :
