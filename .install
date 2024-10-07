@@ -162,7 +162,7 @@ check_package() {
 
 }
 
-check_package "pycryptodomex" "pip install pycryptodomex --index-url https://termux-user-repository.github.io/pypi/"
+check_package "pycryptodomex" "pip install pycryptodomex --index-url https://offici5l.github.io/archives/plib/"
 check_package "requests" "pip install requests"
 
 curl -s "https://raw.githubusercontent.com/offici5l/MiBypassTool/main/MiBypassTool.py" -o "$PREFIX/bin/mibypass" && chmod +x "$PREFIX/bin/mibypass"
