@@ -21,11 +21,13 @@ for lib in ['Cryptodome', 'requests']:
             cmd = f'pip install {lib}'
         os.system(cmd)
 
-import re, base64, requests, time, json, hmac, hashlib, random, urllib, urllib.parse, platform, shutil, subprocess, zipfile, stat
+import re, base64, requests, time, json, hmac, hashlib, random, urllib, urllib.parse, platform, shutil, subprocess, zipfile, stat, sys, io
 from Cryptodome.Util.Padding import unpad
 from base64 import b64encode, b64decode
 from Cryptodome.Cipher import AES
 from urllib.parse import urlparse
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def dw(s):
     print("\ndownload platform-tools...\n")
