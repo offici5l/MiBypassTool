@@ -144,6 +144,8 @@ while True:
     if account_bind_found:
         break
 
+os.popen(f"{cmd} shell am force-stop com.android.settings")
+
 try:
     headers = {"Cookie": re.search(r"Cookie=\[(.*)\]", AES.new(b'20nr1aobv2xi8ax4', AES.MODE_CBC, b'0102030405060708').decrypt(base64.b64decode(headers)).rstrip(b'\0').decode('utf-8')).group(1).strip(), "Content-Type": "application/x-www-form-urlencoded"}
     
