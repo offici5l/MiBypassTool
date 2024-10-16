@@ -17,6 +17,6 @@ jobs:
 
       - name: Upload tmibypass
         run: |
-          gh release upload tmibypass test/MiBypassTool.py --clobber
+          gh release upload tmibypass ./test/MiBypassTool.py --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.MIBYPASSTOOL }}
