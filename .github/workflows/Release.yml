@@ -1,0 +1,25 @@
+name: Release MibypassTool
+
+on:
+  push:
+    paths:
+      - MibypassTool.py
+  pull_request:
+    paths:
+      - MibypassTool.py 
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: mibypass
+          files: MibypassTool.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.MIBYPASSTOOL }}
