@@ -6,7 +6,8 @@ on:
       - MibypassTool.py
   pull_request:
     paths:
-      - MibypassTool.py 
+      - MibypassTool.py
+  workflow_dispatch:
 
 jobs:
   release:
@@ -34,4 +35,3 @@ jobs:
           files: MibypassTool.py
         env:
           GITHUB_TOKEN: ${{ secrets.MIBYPASSTOOL }}
-
