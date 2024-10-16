@@ -2,7 +2,7 @@
 
 # MiBypassTool
 
-[![Version 1.2](https://img.shields.io/badge/Version-1.2-brightgreen)](#)
+[![Version 1.3](https://img.shields.io/badge/Version-1.3-brightgreen)](#)
 
 It is compatible with all platforms.
 
@@ -25,7 +25,7 @@ note: that if your device was made directly with HyperOS from the factory, curre
 ### For MacOS, Windows, Linux:
 
 1. Install Python3.
-2. Download [MiBypassTool](https://codeload.github.com/offici5l/MiBypassTool/zip/refs/heads/main) and run it.
+2. Download [MiBypassTool](https://github.com/offici5l/MiBypassTool/releases/download/mibypass/MiBypassTool.py) and run it.
 
 ### For Android:
 
