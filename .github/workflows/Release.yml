@@ -15,6 +15,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Remove existing tag
+        run: |
+          git fetch --tags
+          git tag -d mibypass || echo "Tag mibypass does not exist."
+          git push origin :refs/tags/mibypass || echo "Remote tag mibypass does not exist."
+
+      - name: Create new tag
+        run: |
+          git tag -a mibypass -m "Updated MibypassTool.py"
+          git push origin mibypass
+
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
