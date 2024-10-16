@@ -1,37 +1,19 @@
-name: Release MibypassTool
+name: Release mibypass
 
 on:
-  push:
-    paths:
-      - MibypassTool.py
-  pull_request:
-    paths:
-      - MibypassTool.py
   workflow_dispatch:
 
+env:
+  VERSION: mibypass
+
 jobs:
-  release:
+  linux:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Remove existing tag
+      - name: Upload Release
         run: |
-          git fetch --tags
-          git tag -d mibypass || echo "Tag mibypass does not exist."
-          git push origin :refs/tags/mibypass || echo "Remote tag mibypass does not exist."
-
-      - name: Create new tag
-        run: |
-          git tag -a mibypass -m "Updated MibypassTool.py"
-          git push origin mibypass
-
-      - name: Create release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: mibypass
-          files: MibypassTool.py
+          gh release upload ${{ env.VERSION }} ./MibypassTool.py --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.MIBYPASSTOOL }}
