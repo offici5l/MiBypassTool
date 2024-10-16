@@ -1,0 +1,22 @@
+name: tmibypass
+
+on:
+  push:
+    paths:
+      - test/MiBypassTool.py
+  pull_request:
+    paths:
+      - test/MiBypassTool.py
+  workflow_dispatch:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Upload tmibypass
+        run: |
+          gh release upload tmibypass ./test/MiBypassTool.py --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.MIBYPASSTOOL }}
