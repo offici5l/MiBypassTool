@@ -1,10 +1,13 @@
-name: Release MibypassTool
+name: Release mibypass
 
 on:
+  push:
+    paths:
+      - MiBypassTool.py
+  pull_request:
+    paths:
+      - MiBypassTool.py
   workflow_dispatch:
-
-env:
-  VERSION: mibypass
 
 jobs:
   linux:
@@ -12,14 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check GitHub CLI version
-        run: gh --version
-
-      - name: List files
-        run: ls -al
-
       - name: Upload Release
         run: |
-          gh release upload ${{ env.VERSION }} ./MiBypassTool.py --clobber
+          gh release upload mibypass ./MiBypassTool.py --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.MIBYPASSTOOL }}
