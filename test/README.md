@@ -1,4 +1,4 @@
-**Regarding Xiaomi HyperOS Unlocking Restrictions (In brief):**
+**Regarding Xiaomi HyperOS bypassing Restrictions (In brief):**
 
 I downloaded all the versions of Xiaomi’s Settings app, decompiled them , and compared them. Naturally, there are differences between each version.
 
