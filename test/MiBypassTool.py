@@ -156,3 +156,6 @@ if "code" in data:
             print(f"\n{key}: {value}")
 else:
     print(data)
+
+
+systemp == "o" and input("\nPress Enter to exit ...")
