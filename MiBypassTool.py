@@ -27,8 +27,6 @@ from base64 import b64encode, b64decode
 from Cryptodome.Cipher import AES
 from urllib.parse import urlparse
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
 def dw(s):
     print("\ndownload platform-tools...\n")
     url = f"https://dl.google.com/android/repository/platform-tools-latest-{s}.zip"
