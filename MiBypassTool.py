@@ -14,7 +14,7 @@ for lib in ['Cryptodome', 'requests']:
         
         if lib == 'Cryptodome':
             if "com.termux" in prefix:
-                cmd = 'pip install pycryptodomex --index-url https://offici5l.github.io/archives/plib/'
+                cmd = 'pkg install python-pycryptodomex'
             else:
                 cmd = 'pip install pycryptodomex'
         else:
