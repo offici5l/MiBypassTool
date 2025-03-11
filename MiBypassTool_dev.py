@@ -2,6 +2,8 @@
 
 version = "dev"
 
+# Test Bypass Restriction(Couldn't add. Device does not exist in the server.)
+
 import os
 
 for lib in ['Cryptodome', 'requests']:
