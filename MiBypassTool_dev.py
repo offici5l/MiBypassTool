@@ -143,6 +143,7 @@ except ValueError as e:
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
+# "gemini", "ido", "kate", "kenzo", "land", "markw", "meri", "mido", "nikel", "omega", "prada", "rolex", "santoni", "venus", "wt88047"
 aj["device"] = "land"
 if aj["rom_version"].startswith("V816"):
     aj["rom_version"] = aj["rom_version"].replace("V816", "V14")
