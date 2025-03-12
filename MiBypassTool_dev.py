@@ -3,6 +3,7 @@
 version = "dev"
 
 # Test Bypass Restriction(Couldn't add. Device does not exist in the server.)
+# test Bypass Restriction(code 30001)
 
 import os
 
