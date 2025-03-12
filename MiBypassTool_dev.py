@@ -141,7 +141,7 @@ except ValueError as e:
 
 aj = json.loads(unpad(AES.new("20nr1aobv2xi8ax4".encode("utf-8"), AES.MODE_CBC, "0102030405060708".encode("utf-8")).decrypt(base64.b64decode(args)), AES.block_size).decode("utf-8"))
 
-aj["device"] = aj["cloudsp_product"]
+aj["device"] = "land"
 
 data = json.dumps(aj)
 
