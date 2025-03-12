@@ -2,7 +2,9 @@
 
 version = "dev"
 
-# Test Bypass Restriction(Couldn't add. Device does not exist in the server.)
+# Bypass Restriction(Couldn't add. Device does not exist in the server.) "This has been successfully tested on Xiaomi 11t Pro vili_eea_global V816.0.12.0.UKDEUXM"
+
+
 # test Bypass Restriction(code 30001)
 
 import os
